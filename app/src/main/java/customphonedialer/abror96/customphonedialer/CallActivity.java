@@ -103,7 +103,7 @@ public class CallActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private Consumer<? super Integer> updateUi(Integer state) {
 
-        callInfo.setText(asString(state) + "\n" + number);
+        //callInfo.setText(asString(state) + "\n" + number);
 
         if (state != Call.STATE_RINGING) {
             answer.setVisibility(View.GONE);
