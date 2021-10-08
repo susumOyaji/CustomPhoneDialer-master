@@ -42,7 +42,9 @@ public class DialerActivity extends AppCompatActivity {
         TelephonyManager telephonyManager = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
         telephonyManager.listen(mListener, PhoneStateListener.LISTEN_CALL_STATE);
 
+        //makeCall();
 
+        EditText phoneNumber = (EditText) findViewById(R.id.phoneNumberInput);
 
         ButterKnife.bind(this);
 
