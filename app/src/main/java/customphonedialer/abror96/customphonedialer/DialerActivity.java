@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.telecom.TelecomManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,8 @@ import static android.telecom.TelecomManager.EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE
 public class DialerActivity extends AppCompatActivity {
     TextView callinfo;
 
+
+    //関連付けるIDとViewの宣言
     @BindView(R.id.phoneNumberInput)
     EditText phoneNumberInput;
 
@@ -46,7 +49,7 @@ public class DialerActivity extends AppCompatActivity {
 
         EditText phoneNumber = (EditText) findViewById(R.id.phoneNumberInput);
 
-        ButterKnife.bind(this);
+        ButterKnife.bind(this);//IDとviewとを関連付ける
 
         if (getIntent() != null && getIntent().getData() != null)
             phoneNumberInput.setText(getIntent().getData().getSchemeSpecificPart());
