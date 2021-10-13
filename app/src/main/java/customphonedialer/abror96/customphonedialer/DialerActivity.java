@@ -28,7 +28,7 @@ import static android.telecom.TelecomManager.EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE
 
 public class DialerActivity extends AppCompatActivity {
     TextView callinfo;
-
+    
 
     //関連付けるIDとViewの宣言
     @BindView(R.id.phoneNumberInput)
@@ -51,8 +51,12 @@ public class DialerActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);//IDとviewとを関連付ける
 
-        if (getIntent() != null && getIntent().getData() != null)
+
+
+        Intent i = getIntent();
+        if (getIntent() != null && getIntent().getData() != null){
             phoneNumberInput.setText(getIntent().getData().getSchemeSpecificPart());
+        }
 
     }
 
